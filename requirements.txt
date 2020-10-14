@@ -1,0 +1,8 @@
+# Imports for AWS Lambda
+requests
+pandas
+numpy
+simple_salesforce
+xlrd
+openpyxl
+boto3
