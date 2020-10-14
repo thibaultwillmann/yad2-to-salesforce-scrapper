@@ -23,6 +23,6 @@
 - uploads data to Salesforce as Listings, Seller Contacts and Images
 - syncronizes the data from Salesforce to Database
 ## Flow Diagram
-![Flow Diagram](http://url/to/Overview.png)
+![Flow Diagram](https://github.com/thibaultwillmann/yad2-to-salesforce-scrapper/blob/main/Overview.png)
 ## Contact
 Do not hesitate to contact me at: thibault.willmann@gmail.com
