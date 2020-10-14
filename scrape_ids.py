@@ -89,9 +89,9 @@ def send_ids_to_sqs(apartment_ids, sqs_name):
 
 
 def scrape_relevant_ids(event, lambda_context): 
-"""
-AWS Lambda entry point, expects env variable SQS_PAGES_QUEUE_NAME and YAD2_CITY_ID to be set up
-"""
+    """
+    AWS Lambda entry point, expects env variable SQS_PAGES_QUEUE_NAME and YAD2_CITY_ID to be set up
+    """
 
     try:
 
