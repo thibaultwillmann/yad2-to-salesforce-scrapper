@@ -1,6 +1,6 @@
 # yad2-to-salesforce-scrapper
-Scape daily all relevant listings from Yad2 via Excel file into Salesforce CRM and Database
-Best deployed in AWS cloud via Lambda, Eventbridge, SQS, S3
+- scape daily all relevant listings from Yad2 via Excel file into Salesforce CRM and Database
+- best deployed in AWS cloud via Lambda, Eventbridge, SQS, S3
 ## Architecture
 ### 1. AWS Eventbridge Trigger
 - triggers every 24h during early morning hours (no activity on yad2)
