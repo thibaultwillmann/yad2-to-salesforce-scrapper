@@ -1,4 +1,4 @@
-# Yad2 → Excel → Salesforce → Database Apartment Scrapper
+# Yad2 Apartment Scrapper
 - scape daily all relevant listings from Yad2 via Excel file into Salesforce CRM and Database
 - best deployed in AWS cloud via Lambda, Eventbridge, SQS, S3
 ## Architecture
