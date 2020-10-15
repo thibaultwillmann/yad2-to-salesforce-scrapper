@@ -778,9 +778,15 @@ def update_user(salesforce_contact):
     """
     bool_to_int = {True: 1, False: 0}
 
+    def check_substring(sub_word, word):
+        try:
+            return sub_word in word
+        except: # word = None
+            return False
+
     updated_user = {
-        "buyer":            bool_to_int.get(("Buyer" in salesforce_contact["pba__ContactType_pb__c"])),
-        "seller":           bool_to_int.get(("Seller" in salesforce_contact["pba__ContactType_pb__c"])),
+        "buyer":            bool_to_int.get(check_substring("Buyer", salesforce_contact["pba__ContactType_pb__c"])),
+        "seller":           bool_to_int.get(check_substring("Seller", salesforce_contact["pba__ContactType_pb__c"])),
         "salesforce_id":    salesforce_contact["Id"]
     }
     if salesforce_contact["Email"]:                 updated_user["email"] =         salesforce_contact["Email"]
@@ -801,9 +807,15 @@ def create_user(salesforce_contact):
     """ 
     bool_to_int = {True: 1, False: 0}
 
+    def check_substring(sub_word, word):
+        try:
+            return sub_word in word
+        except: # word = None
+            return False
+
     created_user = {
         "admin_id":         0,
-        "buyer":            bool_to_int.get(("Buyer" in salesforce_contact["pba__ContactType_pb__c"])),
+        "buyer":            bool_to_int.get(check_substring("Buyer", salesforce_contact["pba__ContactType_pb__c"])),
         "email":            "phone" + salesforce_contact["MobilePhone"] + "" if not salesforce_contact["Email"] else salesforce_contact["Email"], # TODO
         "email_token":      "",
         "first_login":      0,
@@ -813,7 +825,7 @@ def create_user(salesforce_contact):
         "phone":            salesforce_contact["MobilePhone"],
         "phone_2":          salesforce_contact["Second_mobile__c"],
         "salesforce_id":    salesforce_contact["Id"],
-        "seller":           bool_to_int.get(("Seller" in salesforce_contact["pba__ContactType_pb__c"])),
+        "seller":           bool_to_int.get(check_substring("Seller", salesforce_contact["pba__ContactType_pb__c"])),
         "status":           1,
         "type":             0
     }
